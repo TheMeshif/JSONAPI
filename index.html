@@ -1,0 +1,37 @@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $("#inscription").submit(function(e){ e.preventDefault();
+    $.ajax({type:'POST', url: 'builder.php', data:$('#inscription').serialize(), success: function(response) {
+    $("#resultats").fadeOut(800).fadeIn(800).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400);
+    $('#inscription').find('#resultats').html(response);
+     
+    }});
+    });
+    });
+    </script>
+     
+    <style type="text/css">
+    .erreur,.ok,.info{display:inline-block;font-size:15px; padding:2px; width:800px; text-align:center; font-weight:bold;}
+     
+    .erreur {background-color:red;}
+    .ok {background-color:green;}
+    .info {background-color:orange;}
+    </style>
+     
+     
+    <form id="inscription" style="display:block; height:auto; margin:0 auto; text-align:center;" >
+     
+            <div id="resultats"></div>
+     
+                    <fieldset >
+     
+                            <h4 style="color:lightblue;">Votre pseudo :</h4>
+                            <input type="text" name="pseudo" id="pseudo" required /><br /><br />   
+     
+                    </fieldset><br />
+     
+                    <input type="submit" value="Envoyer" />
+     
+    </form>
