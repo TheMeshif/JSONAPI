@@ -4,9 +4,9 @@
     //on remplie les paramètres de connection à JSONAPI
      
     $ip = '188.165.212.46:29384'; // Ip du serveur
-    $port = 30015; //port du plugin (par défaut : 20059)
-    $user = 'admin'; //nom d'utilisateur
-    $pass ='rsrea7abapw3aru'; //mot de passe  
+    $port = port; //port du plugin (par défaut : 20059)
+    $user = 'user'; //nom d'utilisateur
+    $pass ='mdp'; //mot de passe  
     $salt ='salt'; //phrase clé
     $api = new JSONAPI($ip, $port, $user, $pass, $salt);
      
@@ -35,7 +35,7 @@
      
                     // IMPORTANT : Vous devez changez mes groupes par les votre.
                    
-                    if($verif_groupe["success"][0]=="Moderateur(e)"){
+                    if($verif_groupe["success"][0]=="Vagabond(e)"){
                    
                     echo '<div class="ok">Votre pseudo est valide. Vous êtes présent Citoyen :D Bon jeu !</div>';
                     $commande = "manpromote $pseudo builder";
